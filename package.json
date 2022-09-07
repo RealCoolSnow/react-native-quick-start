@@ -1,72 +1,59 @@
 {
-  "name": "ReactNativeQuickStart",
+  "name": "react-native-quick-start",
   "version": "0.0.1",
   "private": true,
+  "description": "Quick start project with React Native 0.70 & TypeScript.",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint \"src/**/*.{ts,tsx}\" \"App.tsx\"",
-    "lintFix": "eslint \"src/**/*.{ts,tsx}\" \"App.tsx\" --fix",
-    "prettier": "prettier --loglevel warn --write \"src/**/*.{ts,tsx,js}\"",
-    "prepare": "husky install",
-    "bump-patch": "npm version patch --no-git-tag-version && fastlane bump_version",
-    "bump-minor": "npm version minor --no-git-tag-version && fastlane bump_version",
-    "bump-major": "npm version major --no-git-tag-version && fastlane bump_version"
-  },
-  "lint-staged": {
-    "\"src/**/*.{ts,tsx}\"|\"App.tsx\"": [
-      "eslint --max-warnings=0",
-      "prettier --write"
-    ]
-  },
-  "engines": {
-    "node": "^16",
-    "npm": "^7 || ^8",
-    "yarn": ">=1.22.17 <= 1.99.99"
+    "lint": "eslint .",
+    "type-check": "tsc"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.3",
+    "@react-native-masked-view/masked-view": "^0.2.6",
+    "@react-navigation/bottom-tabs": "^6.3.1",
+    "@react-navigation/native": "^6.0.10",
+    "@react-navigation/stack": "^6.2.1",
+    "@reduxjs/toolkit": "^1.8.1",
+    "i18next": "^21.6.16",
+    "prop-types": "^15.8.1",
     "react": "18.1.0",
-    "react-native": "0.70.0"
+    "react-i18next": "^11.16.7",
+    "react-native": "0.70.1",
+    "react-native-flipper": "^0.143.0",
+    "react-native-gesture-handler": "^2.4.1",
+    "react-native-reanimated": "^2.8.0",
+    "react-native-safe-area-context": "^4.2.4",
+    "react-native-screens": "^3.13.1",
+    "react-redux": "^8.0.1",
+    "redux-flipper": "^2.0.1",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "@babel/plugin-transform-react-jsx": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.0",
     "@babel/runtime": "^7.12.5",
-    "@react-native-community/eslint-config": "^2.0.0",
-    "@types/jest": "^26.0.23",
-    "@types/react-native": "^0.69.6",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "@types/fbemitter": "^2.0.32",
+    "@types/jest": "^29.0.0",
+    "@types/react": "18.0.8",
+    "@types/react-native": "^0.69.8",
+    "@types/react-redux": "^7.1.24",
     "@types/react-test-renderer": "^18.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.36.2",
-    "@typescript-eslint/parser": "^5.36.2",
-    "@typescript-eslint/typescript-estree": "^5.7.0",
     "babel-jest": "^26.6.3",
-    "babel-plugin-module-resolver": "^4.1.0",
-    "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-plugin-module-resolver": "^4.0.0",
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-config-standard-react": "^11.0.1",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-promise": "^5.1.1",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-react-native": "^3.11.0",
-    "husky": "^8.0.1",
+    "eslint-import-resolver-babel-module": "^5.1.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.3.5",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
-    "lint-staged": "^13.0.0",
-    "metro-react-native-babel-preset": "^0.72.1",
-    "prettier": "^2.4.1",
-    "react-test-renderer": "18.1.0",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "prettier": "^2.6.2",
+    "react-test-renderer": "17.0.2",
     "typescript": "^4.8.2"
-  },
-  "resolutions": {
-    "@types/react": "^18"
   },
   "jest": {
     "preset": "react-native",
@@ -77,6 +64,17 @@
       "jsx",
       "json",
       "node"
+    ],
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "./jest.setup.js"
+    ],
+    "timers": "fake",
+    "testEnvironment": "jsdom",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@react-native|react-native)"
     ]
   }
 }
