@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, develop, release ]
+  pull_request:
+    branches: [ main, master, develop, release ]
+
+  workflow_dispatch:
+
+jobs:
+  eslint-check:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Run npm install packages
+        run: npm i
+
+      - name: Run eslint check
+        run: npm run lint

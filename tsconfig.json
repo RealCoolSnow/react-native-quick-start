@@ -1,0 +1,37 @@
+// prettier-ignore
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": false,
+    "jsx": "react-native",
+    "lib": ["es2019"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
+    "types": ["react-native", "jest"],
+    "paths": {
+      "@api": ["api/*"],
+      "@assets/*": ["assets/*"],
+      "@common/*": ["components/common/*"],
+      "@constants/*": ["constants/*"],
+      "@customtypes/*": ["types/*"],
+      "@routes/*": ["routes/*"],
+      "@screens/*": ["components/screens/*"],
+      "@store/*": ["redux/*"],
+      "@themes": ["constants/themes"],
+      "@utils/*": ["utils/*"],
+    }
+  },
+  "exclude": [
+    "babel.config.js", "jest.config.js", "metro.config.js", "node_modules"
+  ]
+}
+
