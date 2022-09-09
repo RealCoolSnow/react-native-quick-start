@@ -1,18 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler'
+import React from 'react'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/lib/integration/react'
+import { store, persistor } from './src/Store'
+import ApplicationNavigator from './src/Navigators/Application'
+import './src/Translations'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
-}
+const App = () => (
+  <Provider store={store}>
+    {/**
+     * PersistGate delays the rendering of the app's UI until the persisted state has been retrieved
+     * and saved to redux.
+     * The `loading` prop can be `null` or any react instance to show during loading (e.g. a splash screen),
+     * for example `loading={<SplashScreen />}`.
+     * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
+     */}
+    <PersistGate loading={null} persistor={persistor}>
+      <ApplicationNavigator />
+    </PersistGate>
+  </Provider>
+)
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
