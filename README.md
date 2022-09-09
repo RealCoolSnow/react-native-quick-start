@@ -1,6 +1,11 @@
 # react-native-quick-start
 
-created with (https://github.com/thecodingmachine/react-native-boilerplate)
+created with (https://github.com/react-native-community/react-native-template-typescript)
+
+```bash
+npx react-native init MyApp --template react-native-template-typescript
+```
+ui with (https://github.com/thecodingmachine/react-native-boilerplate)
 
 upgrade to react-native 0.70
 
