@@ -1,26 +1,36 @@
-# react-native-quick-start
+# TypeScript Example
 
-created with (https://github.com/react-native-community/react-native-template-typescript)
+<p>
+  <!-- iOS -->
+  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
+  <!-- Android -->
+  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
+  <!-- Web -->
+  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
+</p>
 
-```bash
-npx react-native init MyApp --template react-native-template-typescript
+```sh
+npx create-react-native-app -t with-typescript
 ```
-ui with (https://github.com/thecodingmachine/react-native-boilerplate)
 
-upgrade to react-native 0.70
+TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
 
-- troubleshooting
-https://github.com/RealCoolSnow/react-native-troubleshooting
+## 🚀 How to use
 
-- 构建iOS release版本
-```bash
-  1. 建立目录release_ios
-  2. 执行 npx react-native bundle --entry-file index.js --platform ios --dev false --bundle-output release_ios/main.jsbundle --assets-dest release_ios/
-  3. 拷贝/release_ios下内容到/ios目录，xcode打开工程即可开始正常打包流程
-```
-- 构建Android release版本
-```bash  
-1. 建立/android/app/src/main/assets文件夹
-2. 执行 npx react-native bundle --entry-file index.js --platform android --dev false --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest ./android/app/src/main/res/
-3. 用Android Studio打开工程即可
-```
+#### Creating a new project
+
+- Install the CLI: `npm i -g expo-cli`
+- Create a project: `npx create-react-native-app -t with-typescript`
+- `cd` into the project
+
+### Adding TypeScript to existing projects
+
+- Create a blank TypeScript config: `touch tsconfig.json`
+- Run `yarn start` or `npm run start` to automatically configure TypeScript
+- Rename files to TypeScript, `.tsx` for React components and `.ts` for plain typescript files
+
+> 💡 You can disable the TypeScript setup in Expo CLI with the environment variable `EXPO_NO_TYPESCRIPT_SETUP=1 expo start`
+
+## 📝 Notes
+
+- [Expo TypeScript guide](https://docs.expo.dev/versions/latest/guides/typescript/)
